@@ -8,7 +8,7 @@ namespace PenguinServer.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Space", "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Sun"
+        "Space", "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching", "Sun", "Boiling"
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
