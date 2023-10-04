@@ -23,8 +23,8 @@ function App() {
 
   async function GetMessages(){
 
-    const response = await fetch("https://localhost:5294/Chat/messages");
-    const text = await response.text();
+    const response = await fetch("http://localhost:5294/Chat/messages");
+    const text = await response.json();
     setText(text);
   }
   

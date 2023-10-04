@@ -12,13 +12,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IChatService, ChatService>();
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AnyOrigin", builder =>
+    options.AddPolicy(MyAllowSpecificOrigins, builder =>
     {
         builder
-        .AllowAnyOrigin()
-        .AllowAnyMethod();
+            .WithOrigins("http://localhost")
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
     });
 });
 
@@ -35,6 +38,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors("AnyOrigin");
+app.UseCors(MyAllowSpecificOrigins);
 
 app.Run();
