@@ -1,6 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
+import React from 'react';
+import { ReactEventHandler } from 'react';
 
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
             { text }
           </p>
         </div>
-        <Button onClick={GetMessages}>
+        
+        <button onClick={GetMessages}>
           Play Movie
-        </Button>
+        </button>
       </header>
     </div>
   );
@@ -27,17 +29,7 @@ function App() {
     const text = await response.json();
     setText(text);
   }
-  
 
-}
-
-
-function Button({ onClick, children }) {
-  return (
-    <button onClick={onClick}>
-      {children}
-    </button>
-  );
 }
 
 export default App;
